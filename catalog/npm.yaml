@@ -1,0 +1,110 @@
+# SNAPKIT Catalog — npm Packages
+# 21 packages across 2 monorepos + standalone apps
+
+sovereign_context_tools_monorepo:
+  path: sovereign-context-tools
+  packages:
+    - name: "@snapkittywest/abzu"
+      path: sovereign-context-tools/packages/abzu
+      version: "1.0.0"
+      description: WORM-sealed context garbage collector — fact blocks + Bifrost integration
+      license: MIT
+      deps: [express, tree-sitter, tree-sitter-haskell, tree-sitter-rust, tree-sitter-typescript]
+
+    - name: "@snapkittywest/bifrost"
+      path: sovereign-context-tools/packages/bifrost
+      description: Bifrost state packet generator
+
+    - name: "@snapkittywest/edaulc"
+      path: sovereign-context-tools/packages/edaulc
+      description: EDAULC sovereign linter — 5-pass deterministic code verification
+      license: MIT
+
+    - name: vscode-edaulc
+      path: sovereign-context-tools/packages/vscode-edaulc
+      version: "1.0.0"
+      description: VS Code extension for EDAULC sovereign code verifier
+      publisher: snapkitty
+      vsix: vscode-edaulc-1.0.0.vsix
+
+    - name: vscode-woz-vault
+      path: sovereign-context-tools/packages/vscode-woz-vault
+      version: "2.0.0"
+      description: WOZ Vault + ForgeCode — SnapKitty Sovereign IDE
+      publisher: snapkitty
+      vsix: vscode-woz-vault-2.0.0.vsix
+
+    - name: forgecode-vscode
+      path: sovereign-context-tools/packages/forgecode-vscode
+      description: ForgeCode VS Code extension (packaging in progress)
+
+devflow_packages_monorepo:
+  path: DEVFLOW-FINANCE/packages
+  packages:
+    - name: "@snapkitty/ere-verify"
+      path: DEVFLOW-FINANCE/packages/ere-verify
+      description: Expected Reasoning Error (ERE) 5-pass AI output verification
+      license: MIT
+
+    - name: forgecode-mcp
+      path: DEVFLOW-FINANCE/packages/forgecode-mcp
+      description: MCP server for FORGE code tournament
+
+    - name: "@snapkittywest/sovereign-bridge"
+      path: DEVFLOW-FINANCE/packages/sovereign-bridge
+      description: Sovereign envelope protocol bridge layer
+
+    - name: sovereign-transformer
+      path: DEVFLOW-FINANCE/packages/sovereign-transformer
+      description: Plasma gate + transformer audit
+      license: Sovereign Source License v1.0
+
+    - name: sovereign-router
+      path: DEVFLOW-FINANCE/packages/sovereign-router
+      description: Moe Plasma Gate routing
+
+standalone_apps:
+  - name: collectivekitty
+    path: DEVFLOW-FINANCE/collectivekitty
+    description: Main Next.js 16 sovereign OS UI + ERP backend + agent registry
+    framework: Next.js 16 (Pages Router)
+
+  - name: api-bucket
+    path: DEVFLOW-FINANCE/api-bucket
+    description: Multi-model API router (Tauri + Node.js)
+
+  - name: snapkitty-crm-api
+    path: DEVFLOW-FINANCE/snapkitty-crm-api
+    description: CRM API service (Node.js)
+
+  - name: civicmind
+    path: civicmind
+    description: Civic intelligence Next.js application
+
+  - name: snapkitty-bot
+    path: snapkitty-bot
+    description: Discord bot
+
+  - name: woz-vault
+    path: DEVFLOW-FINANCE/woz-vault
+    description: Apple II emulator + sovereign runtime
+
+  - name: ledge-open-api
+    path: DEVFLOW-FINANCE/ledge-open
+    description: Open ledger REST API (Node.js wrapper over sk-ledge crate)
+
+  - name: uk-treasury-social-nest
+    path: uk-treasury-social-nest
+    description: UK Treasury social nest integration
+
+  - name: daemon-scrum
+    path: DEVFLOW-FINANCE/daemon-scrum
+    description: Scrum daemon service
+
+  - name: snapkitty-tg-node
+    path: DEVFLOW-FINANCE/snapkitty-tg
+    description: Telegram bot + Enochian Reconstruction Engine (ERE)
+
+  - name: tauri-dashboard
+    path: snap-os/apps/tauri-dashboard
+    description: Tauri desktop monitoring dashboard

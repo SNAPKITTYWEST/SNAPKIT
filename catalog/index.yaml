@@ -1,0 +1,52 @@
+# SNAPKIT Master Catalog Index
+# Machine-readable inventory of all SnapKitty artifacts
+# Generated: 2026-06-14
+
+meta:
+  project: SnapKitty Sovereign OS
+  publisher: SNAPKITTYWEST
+  catalog_version: "1.0.0"
+  license: Sovereign Source License v1.0
+
+totals:
+  rust_crates: 22
+  npm_packages: 21
+  vscode_extensions: 6
+  binary_executables: 7
+  bridge_files: 32
+  bridge_languages: 10
+
+workspaces:
+  rust:
+    - path: DEVFLOW-FINANCE
+      members: 4
+      file: catalog/crates.yaml#devflow-workspace
+    - path: snap-os
+      members: 16
+      file: catalog/crates.yaml#snap-os-workspace
+  npm:
+    - path: sovereign-context-tools
+      members: 6
+      file: catalog/npm.yaml#sovereign-context-tools
+    - path: DEVFLOW-FINANCE/packages
+      members: 5
+      file: catalog/npm.yaml#devflow-packages
+
+bridge_languages:
+  - haskell:   { count: 11, path: DEVFLOW-FINANCE/bridges/haskell }
+  - prolog:    { count: 7,  path: DEVFLOW-FINANCE/bridges/prolog + packages }
+  - rust:      { count: 5,  path: DEVFLOW-FINANCE/bridges }
+  - elixir:    { count: 1,  path: DEVFLOW-FINANCE/bridges/elixir }
+  - apl:       { count: 2,  path: DEVFLOW-FINANCE/bridges/apl }
+  - cobol:     { count: 2,  path: DEVFLOW-FINANCE/bridges/cobol }
+  - cpp:       { count: 1,  path: DEVFLOW-FINANCE/bridges/cpp }
+  - lisp:      { count: 1,  path: DEVFLOW-FINANCE/bridges/lisp }
+  - typescript:{ count: 1,  path: DEVFLOW-FINANCE/bridges/mantra }
+  - robotics:  { count: 4,  path: DEVFLOW-FINANCE/bridges/robotics }
+
+see_also:
+  - catalog/crates.yaml
+  - catalog/npm.yaml
+  - catalog/extensions.yaml
+  - catalog/binaries.yaml
+  - catalog/bridges.yaml
