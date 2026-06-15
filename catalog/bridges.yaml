@@ -1,0 +1,112 @@
+# SNAPKIT Catalog — Multi-Language Bridge Integrations
+# The bridge layer is the architecture: 10 languages, one sovereign runtime.
+
+path: DEVFLOW-FINANCE/bridges
+
+haskell:
+  count: 11
+  path: bridges/haskell
+  runtime: GHC 9.4.8
+  build: bridges-haskell.cabal / cabal.project
+  chain: "thermal.hs → quantum_monad.hs → no_cloning.hs"
+  files:
+    - AhmadMeta.hs:             Ahmad metadata & authorization chain validation
+    - blueprint_validator.hs:   Blueprint structure verification
+    - deed_validator.hs:        Deed chain validation — borrow chain integrity
+    - memory_consistency.hs:    Quantum memory consistency proofs
+    - no_cloning.hs:            No-Cloning Theorem (LinearTypes GADT, v2.0)
+    - quantum_governance.hs:    Quantum governance rules engine
+    - quantum_monad.hs:         Quantum monad — amplitude superposition, Born collapse
+    - state_checker.hs:         State machine verification
+    - thermal.hs:               ThermalEngine — proven lo < hi, EMA decay
+    - ThermalEngine.hs:         Complete thermal engine (alternative entry point)
+    - verify.hs:                General-purpose verification utility
+  note: "Mathematics belongs to the language whose compiler can prove it. Haskell proves."
+
+prolog:
+  count: 7
+  runtime: SWI-Prolog
+  files:
+    - path: bridges/prolog/shrew_observer.pl
+      description: SHREW — 4-level attestation observer (read-only, no side effects)
+    - path: bridges/prolog/edaulc_verify.pl
+      description: EDAULC — 5-pass ERE verification engine, shadow build protocol
+    - path: bridges/prolog/quantum_monad.pl
+      description: Quantum monad superposition engine — Watchtowers, METATRON, 49th Call
+    - path: snapkitty-core/prolog/shrew.pl
+      description: Shrew agent core logic
+    - path: packages/sovereign-router/moe_plasma_gate.pl
+      description: Moe Plasma Gate — sovereign routing rules
+    - path: packages/sovereign-transformer/audit/sovereign_classifier_audit.pl
+      description: Sovereign classifier audit — transformer verification
+    - path: logs/deeds/*.pl
+      description: Generated deed logs (Prolog-serialized event records)
+  note: "The language IS the architecture. Pure SWI-Prolog. No bridge layer needed."
+
+rust_bridges:
+  count: 5
+  path: bridges (Rust source files)
+  files:
+    - apl_bridge.rs:     APL language FFI integration
+    - cobol_bridge.rs:   COBOL language FFI integration
+    - haskell_bridge.rs: Haskell GHC FFI bridge
+    - quantum_receipt.rs:Quantum receipt generation (cryptographic proof of computation)
+    - seal.rs:           Cryptographic sealing — WORM seal creation
+    - entropy_router.rs: Entropy-based routing — ANU quantum source integration
+
+elixir:
+  count: 1
+  path: bridges/elixir
+  runtime: Elixir / OTP (Mix)
+  description: SnapKitty Router microservice — released Elixir OTP application
+  files: [mix.exs, mix.lock, Dockerfile, config/config.exs]
+  build_artifact: bridges/elixir/_build/prod/rel/snapkitty_router
+
+apl:
+  count: 2
+  path: bridges/apl
+  description: Array programming language for financial calculations
+  files:
+    - finance.apl:     Financial formulas — portfolio math, yield calculations
+    - forge_build.apl: FORGE build system integration using APL array operations
+
+cobol:
+  count: 2
+  path: bridges/cobol
+  runtime: GnuCOBOL
+  description: Legacy transaction processing — enterprise-grade ledger operations
+  files:
+    - transaction.cbl:   COBOL transaction processing pipeline
+    - vault_treasury.cbl:COBOL vault and treasury operations
+
+cpp:
+  count: 1
+  path: bridges/cpp
+  files:
+    - nova_signal.cpp: Nova signal generation — NOVA magnitude computation in C++
+
+lisp:
+  count: 1
+  path: bridges/lisp
+  files:
+    - deed-rules.lisp: LISP deed evaluation rules — Funtan rule engine
+
+typescript:
+  count: 1
+  path: bridges/mantra
+  files:
+    - mantra_protocol.ts: Mantra protocol — sovereign envelope TypeScript implementation
+
+robotics:
+  count: 4
+  path: bridges/robotics
+  files:
+    - hardware_bus.rs:  Hardware interface layer (Rust)
+    - motion_planner.rs:Motion planning algorithms
+    - policy_kernel.rs: Robotics policy enforcement
+    - mod.rs:           Robotics module root
+
+build:
+  script: bridges/build-agents.sh
+  description: Builds all Haskell and C++ bridges to ELF binaries in bridges/bin/
+  output: bridges/bin/ (7 executables)

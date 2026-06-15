@@ -1,0 +1,98 @@
+# SNAPKIT Catalog — Rust Crates
+# 22 crates across 2 workspaces
+
+devflow_workspace:
+  path: DEVFLOW-FINANCE
+  file: DEVFLOW-FINANCE/Cargo.toml
+  members:
+    - name: snapkitty-core
+      path: DEVFLOW-FINANCE/snapkitty-core
+      description: Main agent runtime, kinetic layer, WORM ledger, Rust handler
+      license: Sovereign Source License v1.0
+
+    - name: snapkitty-wasm
+      path: DEVFLOW-FINANCE/snapkitty-wasm
+      description: WebAssembly bindings for sovereign agent runtime
+      license: Sovereign Source License v1.0
+
+    - name: snapkitty-tg
+      path: DEVFLOW-FINANCE/snapkitty-tg
+      description: Telegram integration with Enochian Reconstruction Engine (ERE)
+      license: Sovereign Source License v1.0
+
+    - name: api-bucket-tauri
+      path: DEVFLOW-FINANCE/api-bucket/src-tauri
+      description: Multi-model API router, Tauri desktop app
+      license: Sovereign Source License v1.0
+
+  standalone_crates:
+    - name: sk-ledge
+      path: DEVFLOW-FINANCE/ledge-open
+      description: Open ledger service — WORM-append accounting
+      license: MIT
+
+    - name: snappy-fortress-core
+      path: DEVFLOW-FINANCE/snappy-fortress-core
+      description: Security fortress — threat boundary enforcement
+      license: Sovereign Source License v1.0
+
+    - name: kittyverse
+      path: DEVFLOW-FINANCE/kittyverse
+      description: Kittyverse game/agent environment
+      license: Sovereign Source License v1.0
+
+    - name: snapkitty-core-ffi
+      path: DEVFLOW-FINANCE/collectivekitty/native
+      description: Rust FFI bindings for collectivekitty Node.js app
+      license: Sovereign Source License v1.0
+
+snap_os_workspace:
+  path: snap-os
+  file: snap-os/Cargo.toml
+  crate_count: 16
+  members:
+    - name: silverback
+      description: snap-os microkernel — capability system, memory allocator, scheduler
+
+    - name: soulvm
+      description: Soul VM runtime — agent execution environment
+
+    - name: bifrost
+      description: Merkle-DAG audit chain, WORM_FS, event sealing
+
+    - name: bifrost-attest
+      description: Attestation layer — epoch root signing and verification
+
+    - name: bifrost-policy
+      description: Policy kernel — Lean 4 extracted decision procedures
+
+    - name: fontan-lisopp
+      description: Fontan/Lisopp bridge module
+
+    - name: craft-crypto
+      description: Cryptographic primitives — hashing, signing, key derivation
+
+    - name: soul-agent
+      description: Soul agent runtime — agent lifecycle management
+
+    - name: soul-bus
+      description: Inter-agent message bus — NATS-compatible routing
+
+    - name: flux-agent
+      description: State machine agent — FSM-driven sovereign workflow
+
+    - name: telemetry-bus
+      description: Telemetry collection and aggregation
+
+    - name: soul-narrator
+      description: Narrative/logging agent — decision trace generation
+
+    - name: context-hydrator
+      description: Context marshaling for LLM integration
+
+    - name: council-forge
+      description: Build orchestration & code forge (tools/council-forge)
+
+    - name: tauri-dashboard-backend
+      path: snap-os/apps/tauri-dashboard/src-tauri
+      description: Tauri desktop dashboard backend

@@ -1,0 +1,66 @@
+# SNAPKIT Catalog — VS Code Extensions
+# Publisher: snapkitty
+# 6 extensions (3 packaged .vsix + 2 manifests + 1 in progress)
+
+packaged_extensions:
+  - id: snapkitty.vscode-edaulc
+    display_name: "EDAULC — Sovereign Code Verifier"
+    version: "1.0.0"
+    publisher: snapkitty
+    path: sovereign-context-tools/packages/vscode-edaulc
+    vsix: sovereign-context-tools/packages/vscode-edaulc/vscode-edaulc-1.0.0.vsix
+    description: 5-pass deterministic linter for sovereign codebases. Zero AI cost.
+    categories: [Linters, Other]
+    activation: [onLanguage:typescript, onLanguage:javascript, onLanguage:rust, onLanguage:python, onLanguage:go]
+    license: MIT
+
+  - id: snapkitty.vscode-woz-vault
+    display_name: "WOZ Vault + ForgeCode — SnapKitty Sovereign IDE"
+    version: "2.0.0"
+    publisher: snapkitty
+    path: sovereign-context-tools/packages/vscode-woz-vault
+    vsix: sovereign-context-tools/packages/vscode-woz-vault/vscode-woz-vault-2.0.0.vsix
+    vsix_archived: sovereign-context-tools/packages/vscode-woz-vault/vscode-woz-vault-1.0.0.vsix
+    description: Apple II retro terminal + FORGE code tournament. Run agents, insert winning code.
+    categories: [Other, AI]
+    keybindings:
+      open_woz_vault: "ctrl+shift+w / cmd+shift+w"
+      open_sovereign_ide: "ctrl+shift+i / cmd+shift+i"
+      quick_build: "ctrl+shift+f / cmd+shift+f"
+      insert_forge_winner: "ctrl+shift+j / cmd+shift+j"
+    license: Sovereign Source License v1.0
+
+  - id: snapkitty.forge-completions
+    display_name: "FORGE Completions"
+    version: "0.1.0"
+    publisher: snapkitty
+    path: DEVFLOW-FINANCE/snapkitty-ide/extensions/forge-completions
+    vsix: DEVFLOW-FINANCE/snapkitty-ide/extensions/forge-completions/forge-completions-0.1.0.vsix
+    description: Snippets & completions for SnapKitty agents, Bifrost events, MAGMA commands
+
+  - id: snapkitty.magma-protocol
+    display_name: "MAGMA Protocol"
+    version: "0.1.0"
+    publisher: snapkitty
+    path: DEVFLOW-FINANCE/snapkitty-ide/extensions/magma-protocol
+    vsix: DEVFLOW-FINANCE/snapkitty-ide/extensions/magma-protocol/magma-protocol-0.1.0.vsix
+
+  - id: snapkitty.sovereign-status
+    display_name: "Sovereign Status"
+    version: "0.1.0"
+    publisher: snapkitty
+    path: DEVFLOW-FINANCE/snapkitty-ide/extensions/sovereign-status
+    vsix: DEVFLOW-FINANCE/snapkitty-ide/extensions/sovereign-status/sovereign-status-0.1.0.vsix
+
+manifest_only:
+  - id: snapkitty.lean4-checker
+    path: DEVFLOW-FINANCE/snapkitty-ide/extensions/lean4-checker
+    status: manifest only — not yet packaged
+
+  - id: snapkitty.forgecode-vscode
+    path: sovereign-context-tools/packages/forgecode-vscode
+    status: in progress — no .vsix yet
+
+  - id: snapkitty.openkitty
+    path: DEVFLOW-FINANCE/snapkitty-ide/extensions/openkitty
+    status: manifest only

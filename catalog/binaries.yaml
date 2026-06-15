@@ -1,0 +1,70 @@
+# SNAPKIT Catalog — Compiled Binary Executables
+# All ELF 64-bit binaries in DEVFLOW-FINANCE/bridges/bin/
+# Built by: DEVFLOW-FINANCE/bridges/build-agents.sh
+
+path: DEVFLOW-FINANCE/bridges/bin
+
+binaries:
+  - name: ahmad-meta
+    file: bridges/bin/ahmad-meta
+    format: ELF 64-bit (with debug info)
+    source: bridges/haskell/AhmadMeta.hs
+    challenge_type: stdin_nonce
+    description: Ahmad metadata validation — verifies agent identity and authorization chain
+    attestation_level: 4  # SHREW Level 4: Execution Proven
+
+  - name: no-cloning
+    file: bridges/bin/no-cloning
+    format: ELF 64-bit (with debug info)
+    source: bridges/haskell/no_cloning.hs
+    challenge_type: stdin_nonce
+    description: Quantum no-cloning enforcement — LinearTypes pipeline, 5-pass ERE, Born collapse
+    attestation_level: 4
+
+  - name: nova-signal
+    file: bridges/bin/nova-signal
+    format: ELF 64-bit PIE
+    source: bridges/cpp/nova_signal.cpp
+    challenge_type: stdin_nonce
+    description: Nova signal generation — NOVA magnitude computation and routing
+    attestation_level: 4
+
+  - name: quantum-governance
+    file: bridges/bin/quantum-governance
+    format: ELF 64-bit (with debug info)
+    source: bridges/haskell/quantum_governance.hs
+    challenge_type: stdin_nonce
+    description: Quantum governance rules engine — agent policy enforcement
+    attestation_level: 4
+
+  - name: thermal
+    file: bridges/bin/thermal
+    format: ELF 64-bit (with debug info)
+    source: bridges/haskell/thermal.hs
+    challenge_type: stdin_nonce
+    description: Thermal equilibrium enforcement — ThermalWindow computation, proven lo < hi
+    attestation_level: 4
+
+  - name: tx-bridge
+    file: bridges/bin/tx-bridge
+    format: ELF 64-bit PIE
+    source: bridges/apl/finance.apl
+    challenge_type: stdin_nonce
+    description: Transaction bridge — APL financial formula execution
+    attestation_level: 4
+
+  - name: vault-treasury
+    file: bridges/bin/vault-treasury
+    format: ELF 64-bit PIE
+    source: bridges/cobol/vault_treasury.cbl
+    challenge_type: stdin_nonce
+    description: Treasury vault operations — COBOL ledger transaction processing
+    attestation_level: 4
+
+shrew_attestation:
+  observer: bridges/prolog/shrew_observer.pl
+  description: >
+    SHREW (Sovereign Hashed Read-only Evidence Witness) attests all binaries
+    through 4 levels: source_present | binary_present | fallback_active | execution_proven.
+    Level 4 (execution_proven) is the only level that proves the binary actually executes.
+  run: "swipl -g 'attest_all, halt' bridges/prolog/shrew_observer.pl > shrew_report.txt"
