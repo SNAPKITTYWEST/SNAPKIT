@@ -41,3 +41,5 @@ catalog/
 ## License
 
 Sovereign Source License v1.0. Individual packages may carry MIT or Apache 2.0 — see each package manifest.
+
+![](https://sovereign-analytics.snapkittywest.workers.dev/canary/SNAPKIT)
